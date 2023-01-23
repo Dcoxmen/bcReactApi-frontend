@@ -98,7 +98,7 @@ function ProductList() {
               {product.images[0] && <img src={product.images[0].thumbnail_url} alt={product.name} />}
               <ul>
                 {product.custom_fields.map(custom_field => (
-                  <li  key={custom_field.id}>
+                  <li  key={`${custom_field.name}_${custom_field.index}`}>
                     <p>{custom_field.name} : {custom_field.value}</p>
                   </li>
                 ))}
@@ -112,4 +112,5 @@ function ProductList() {
 }
 
 export default ProductList;
+
 
